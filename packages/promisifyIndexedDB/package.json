@@ -1,5 +1,5 @@
 {
-  "name": "@ftc/promisifyindexed",
+  "name": "@ftc/promisifyindexedDB",
   "version": "0.0.3",
   "description": "promisify indexedDB",
   "main": "dist/index.min.js",
