@@ -1,0 +1,15 @@
+{
+  "name": "promisifyindexed",
+  "version": "1.0.0",
+  "description": "promisify indexedDB",
+  "main": "dist/index.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.1.0"
+  }
+}
