@@ -1,5 +1,5 @@
 {
-  "name": "@ftc/promisifyindexedDB",
+  "name": "@fatc/promisifyindexedDB",
   "private": false,
   "version": "0.0.10",
   "description": "promisify indexedDB",
