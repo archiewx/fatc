@@ -1,5 +1,4 @@
 {
-  "name": "ftc",
   "devDependencies": {
     "lerna": "^2.11.0",
     "rollup": "^0.61.0",
