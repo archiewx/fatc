@@ -1,7 +1,7 @@
 {
   "name": "@ftc/promisifyindexedDB",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "promisify indexedDB",
   "main": "dist/index.min.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "devDependencies": {
     "jest": "^23.1.0"
   },
-  "publicConfig": {
+  "publishConfig": {
     "access": "public"
   }
 }
