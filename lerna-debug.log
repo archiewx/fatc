@@ -6,7 +6,7 @@
 5 silly isInitialized true
 6 silly existsSync /Users/zhenglongfan/code/github/ftc/VERSION
 7 silly initialize attempt
-8 info current version 0.0.4
+8 info current version 0.0.7
 9 silly isDetachedHead
 10 silly getCurrentBranch
 11 verbose getCurrentBranch master
@@ -18,9 +18,9 @@
 17 silly hasTags
 18 verbose hasTags true
 19 silly getLastTag
-20 verbose getLastTag v0.0.4
-21 info Comparing with v0.0.4.
-22 silly diffSinceIn v0.0.4 packages/promisifyIndexedDB
+20 verbose getLastTag v0.0.7
+21 info Comparing with v0.0.7.
+22 silly diffSinceIn v0.0.7 packages/promisifyIndexedDB
 23 silly diff packages/promisifyIndexedDB/package.json
 24 verbose updated @ftc/promisifyindexedDB
 25 info Checking for prereleased packages...
@@ -36,9 +36,9 @@
 35 silly runScriptSync version @ftc/promisifyindexedDB
 36 silly runScriptSync version ftc
 37 silly addFile /Users/zhenglongfan/code/github/ftc/packages/promisifyIndexedDB/package.json
-38 silly commit v0.0.5
-39 verbose commit [ 'commit', '--no-verify', '-m', 'v0.0.5' ]
-40 silly addTag v0.0.5
+38 silly commit v0.0.8
+39 verbose commit [ 'commit', '--no-verify', '-m', 'v0.0.8' ]
+40 silly addTag v0.0.8
 41 silly runScriptSync postversion @ftc/promisifyindexedDB
 42 silly runScriptSync postversion ftc
 43 info publish Publishing packages to npm...
@@ -72,29 +72,99 @@
 67 silly publishTaggedInDir latest promisifyIndexedDB
 68 silly getExecOpts { cwd:
 68 silly getExecOpts    '/Users/zhenglongfan/code/github/ftc/packages/promisifyIndexedDB' }
-69 error publish Ran out of retries while publishing @ftc/promisifyindexedDB Error: Command failed: yarn publish --tag latest --new-version 0.0.5
-69 error publish warning ../../package.json: No license field
-69 error publish (node:25943) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-69 error publish error Couldn't publish package: "https://registry.npmjs.org/@ftc%2fpromisifyindexedDB: You must sign up for private packages"
-69 error publish yarn publish v1.7.0
-69 error publish [1/4] Bumping version...
-69 error publish info Current version: 0.0.5
-69 error publish [2/4] Logging in...
-69 error publish [3/4] Publishing...
-69 error publish info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+69 error publish Ran out of retries while publishing @ftc/promisifyindexedDB Error: Command failed: npm publish --tag latest
+69 error publish npm notice
+69 error publish npm notice 📦  @ftc/promisifyindexedDB@0.0.8
+69 error publish npm notice === Tarball Contents ===
+69 error publish npm notice 424B    package.json
+69 error publish npm notice 500B    rollup.config.js
+69 error publish npm notice 107.4kB yarn.lock
+69 error publish npm notice 15.4kB  .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 0       .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+69 error publish npm notice 0       .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+69 error publish npm notice 15.4kB  .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 0       .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+69 error publish npm notice 0       .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+69 error publish npm notice 15.4kB  .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 0       .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+69 error publish npm notice 0       .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+69 error publish npm notice 15.4kB  .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 3B      .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+69 error publish npm notice 0       .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+69 error publish npm notice 0       .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+69 error publish npm notice 18.7kB  dist/index.common.js
+69 error publish npm notice 7.2kB   dist/index.min.js
+69 error publish npm notice 10.2kB  src/index.ts
+69 error publish npm notice === Tarball Details ===
+69 error publish npm notice name:          @ftc/promisifyindexedDB
+69 error publish npm notice version:       0.0.8
+69 error publish npm notice package size:  41.8 kB
+69 error publish npm notice unpacked size: 206.1 kB
+69 error publish npm notice shasum:        624073b7d146fabec326210bab34d078fa9562f3
+69 error publish npm notice integrity:     sha512-gybk1cXfCrq03[...]jUG3NlBzu0ZWw==
+69 error publish npm notice total files:   26
+69 error publish npm notice
+69 error publish npm ERR! publish Failed PUT 403
+69 error publish npm ERR! code E403
+69 error publish npm ERR! Forbidden : @ftc/promisifyindexedDB
+69 error publish
+69 error publish npm ERR! A complete log of this run can be found in:
+69 error publish npm ERR!     /Users/zhenglongfan/.npm/_logs/2018-06-21T09_45_08_144Z-debug.log
 69 error publish
 69 error publish     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
 69 error publish     at process._tickCallback (internal/process/next_tick.js:68:7)
 70 error execute callback with error
-71 error Error: Command failed: yarn publish --tag latest --new-version 0.0.5
-71 error warning ../../package.json: No license field
-71 error (node:25943) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
-71 error error Couldn't publish package: "https://registry.npmjs.org/@ftc%2fpromisifyindexedDB: You must sign up for private packages"
-71 error yarn publish v1.7.0
-71 error [1/4] Bumping version...
-71 error info Current version: 0.0.5
-71 error [2/4] Logging in...
-71 error [3/4] Publishing...
-71 error info Visit https://yarnpkg.com/en/docs/cli/publish for documentation about this command.
+71 error Error: Command failed: npm publish --tag latest
+71 error npm notice
+71 error npm notice 📦  @ftc/promisifyindexedDB@0.0.8
+71 error npm notice === Tarball Contents ===
+71 error npm notice 424B    package.json
+71 error npm notice 500B    rollup.config.js
+71 error npm notice 107.4kB yarn.lock
+71 error npm notice 15.4kB  .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 0       .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+71 error npm notice 0       .rpt2_cache/233b393bc178b7643dee755b6e2632f04179ef21/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+71 error npm notice 15.4kB  .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 0       .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+71 error npm notice 0       .rpt2_cache/5f579fa880733cc886a64e40d24b10202cc3fe4c/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+71 error npm notice 15.4kB  .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 0       .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+71 error npm notice 0       .rpt2_cache/8fb9676269388ca9cb8e7d628d7e647ea4814ffe/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+71 error npm notice 15.4kB  .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/code/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/semanticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 3B      .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/syntacticDiagnostics/cache/7cf1a7088312b40a67f39e4d27b2bbcbee63a511
+71 error npm notice 0       .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/types/cache/5d609eba04e27d90d98fbde4875ddcdff9a8ae3e
+71 error npm notice 0       .rpt2_cache/a4acd2407be7e7f3253c69ab34fd6da458582b22/types/cache/be7c745314217a6ca8e2e92da9ef49a71f6c9933
+71 error npm notice 18.7kB  dist/index.common.js
+71 error npm notice 7.2kB   dist/index.min.js
+71 error npm notice 10.2kB  src/index.ts
+71 error npm notice === Tarball Details ===
+71 error npm notice name:          @ftc/promisifyindexedDB
+71 error npm notice version:       0.0.8
+71 error npm notice package size:  41.8 kB
+71 error npm notice unpacked size: 206.1 kB
+71 error npm notice shasum:        624073b7d146fabec326210bab34d078fa9562f3
+71 error npm notice integrity:     sha512-gybk1cXfCrq03[...]jUG3NlBzu0ZWw==
+71 error npm notice total files:   26
+71 error npm notice
+71 error npm ERR! publish Failed PUT 403
+71 error npm ERR! code E403
+71 error npm ERR! Forbidden : @ftc/promisifyindexedDB
+71 error
+71 error npm ERR! A complete log of this run can be found in:
+71 error npm ERR!     /Users/zhenglongfan/.npm/_logs/2018-06-21T09_45_08_144Z-debug.log
 71 error
 71 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
