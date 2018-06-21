@@ -13,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^23.1.0"
+  },
+  "publicConfig": {
+    "access": "public"
   }
 }
