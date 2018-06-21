@@ -1,11 +1,12 @@
 {
   "name": "@ftc/promisifyindexedDB",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "promisify indexedDB",
   "main": "dist/index.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "rollup -c --watch"
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
   },
   "author": "",
   "license": "ISC",
