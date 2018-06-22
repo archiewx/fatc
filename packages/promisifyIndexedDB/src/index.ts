@@ -2,25 +2,8 @@
  * @Author: zhenglfsir@gmail.com
  * @Date: 2018-06-21 15:50:00
  * @Last Modified by: zhenglfsir@gmail.com
- * @Last Modified time: 2018-06-21 16:49:25
+ * @Last Modified time: 2018-06-22 09:45:34
  */
-
-type StoreType = {
-  storeName: string
-  optional?: { keyPath?: string; autoIncrement?: boolean }
-}
-type OptionType = {
-  dbname: string
-  version?: number
-  stores: StoreType[]
-}
-
-enum TRANSACTION_MODE {
-  READWRITE = 'readwrite',
-  READONLY = 'readonly',
-  READWRITEFLUSH = 'readwriteflush',
-  VERSIONCHANGE = 'versionchange'
-}
 
 const isDev = process.env.NODE_ENV !== 'production'
 const { log, warn, error } = (() => ({
@@ -53,15 +36,15 @@ const { startTiming, finishTiming } = (() => ({
  * 5. 全部使用Promise
  */
 class PromisifyIndexedDB {
-  dbname: string
-  version: number | void
-  IndexedDBInstance: null | IDBFactory
-  db: null | IDBDatabase
-  storeName: string
-  transaction: null | IDBTransaction
-  stores: StoreType[]
+  private dbname: string
+  private version: number | void
+  private IndexedDBInstance: null | IDBFactory
+  private db: null | IDBDatabase
+  private storeName: string
+  private transaction: null | IDBTransaction
+  private stores: StoreType[]
 
-  constructor(option: OptionType) {
+  public constructor(option: OptionType) {
     this.dbname = option.dbname
     this.version = option.version
     this.stores = option.stores
@@ -74,7 +57,7 @@ class PromisifyIndexedDB {
     }
   }
 
-  compatibilityCheck = () => {
+  private compatibilityCheck = () => {
     const indexedDB =
       window.indexedDB ||
       (<any>window).mozIndexedDB ||
@@ -89,7 +72,7 @@ class PromisifyIndexedDB {
     return indexedDB && IDBTransaction && IDBKeyRange
   }
 
-  createIndexedDBInstance = () => {
+  private createIndexedDBInstance = () => {
     if (!this.IndexedDBInstance) {
       this.IndexedDBInstance =
         window.indexedDB ||
@@ -100,7 +83,7 @@ class PromisifyIndexedDB {
     return this.IndexedDBInstance
   }
 
-  checkDb = () => {
+  private checkDb = () => {
     if (!this.db) {
       const msg = `未连接数据库IndexedDB[${this.dbname}]`
       isDev && warn(msg)
@@ -109,7 +92,7 @@ class PromisifyIndexedDB {
     return this.db
   }
 
-  checkTransaction = () => {
+  public checkTransaction = () => {
     if (!this.transaction) {
       const msg = `未开启事务[${this.dbname}]`
       isDev && warn(msg)
@@ -118,15 +101,15 @@ class PromisifyIndexedDB {
     return this.transaction
   }
 
-  getDBInstance = () => {
+  public getDBInstance = () => {
     return this.checkDb()
   }
 
-  getTransactionInstance = () => {
+  public getTransactionInstance = () => {
     return this.checkTransaction()
   }
 
-  open = () => {
+  public open = () => {
     const request = this.createIndexedDBInstance().open(this.dbname, this.version || 1)
     return new Promise((resolve, reject) => {
       request.onupgradeneeded = (e: IDBVersionChangeEvent) => {
@@ -150,7 +133,7 @@ class PromisifyIndexedDB {
   }
 
   // 必须在upgradeend内创建objectstore
-  createObjectStore = (
+  private createObjectStore = (
     storeName: string,
     optional: { keyPath?: string; autoIncrement?: boolean } = {
       keyPath: 'id',
@@ -169,7 +152,7 @@ class PromisifyIndexedDB {
     return this
   }
 
-  count = (query?: string | IDBKeyRange) => {
+  public count = (query?: string | IDBKeyRange) => {
     const transaction = this.checkTransaction()
     const objectStore = transaction.objectStore(this.storeName)
     const countRequest = objectStore.count(query)
@@ -189,7 +172,7 @@ class PromisifyIndexedDB {
   /**
    * 开启事务
    */
-  startTransaction = (
+  public startTransaction = (
     storeName: string,
     mode: 'readonly' | 'readwrite' | 'versionchange' | undefined = 'readwrite'
   ) => {
@@ -210,7 +193,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  add = (data: any[]) => {
+  public add = (data: any[]) => {
     const transaction = this.checkTransaction()
 
     const objectStore = transaction.objectStore(this.storeName)
@@ -249,7 +232,7 @@ class PromisifyIndexedDB {
       })
   }
 
-  get = (key: string) => {
+  public get = (key: string) => {
     return new Promise((reslove, reject) => {
       const transaction = this.checkTransaction()
       const objectStore = transaction.objectStore(this.storeName)
@@ -265,7 +248,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  getAll = (query?: string | IDBKeyRange) => {
+  public getAll = (query?: string | IDBKeyRange) => {
     const cursorRequest = this.openCursor(query)
     const data: any[] = []
     return new Promise((resolve, reject) => {
@@ -286,7 +269,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  delete = (key: string | IDBKeyRange) => {
+  public delete = (key: string | IDBKeyRange) => {
     const transaction = this.checkTransaction()
     const objectStore = transaction.objectStore(this.storeName)
     const deleteRequest = objectStore.delete(key)
@@ -302,7 +285,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  clear = (query?: string | IDBKeyRange) => {
+  public clear = (query?: string | IDBKeyRange) => {
     const transaction = this.checkTransaction()
     const objectStore = transaction.objectStore(this.storeName)
     const cursorRequest = objectStore.openCursor(query)
@@ -324,7 +307,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  put = (item: any, key?: string | number) => {
+  public put = (item: any, key?: string | number) => {
     const transaction = this.checkTransaction()
     const objectStore = transaction.objectStore(this.storeName)
     const putRequest = objectStore.put(item, key)
@@ -340,7 +323,7 @@ class PromisifyIndexedDB {
     })
   }
 
-  openCursor = (
+  private openCursor = (
     query?: string | IDBKeyRange,
     direction: 'next' | 'nextunique' | 'prev' | 'prevunique' = 'next'
   ) => {
@@ -353,7 +336,7 @@ class PromisifyIndexedDB {
   /**
    * 关闭数据库
    */
-  close = () => {
+  public close = () => {
     const db = this.checkDb()
     return new Promise((resolve, reject) => {
       db.onerror = (err) => {
@@ -361,6 +344,7 @@ class PromisifyIndexedDB {
         reject(err)
       }
       db.close()
+      resolve(this)
     })
   }
 }
