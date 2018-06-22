@@ -3,7 +3,7 @@
   "packages": [
     "packages/promisifyIndexedDB"
   ],
-  "version": "0.0.13",
+  "version": "0.0.14",
   "npmClient": "npm",
   "npmClientArgs": [
     "--production",
