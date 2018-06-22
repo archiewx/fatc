@@ -7,8 +7,13 @@
   "files": [
     "dist",
     "src",
-    "typings"
+    "typings",
+    "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:zsirfs/fatc.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c --watch",
