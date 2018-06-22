@@ -5,6 +5,11 @@
   "description": "promisify indexedDB",
   "main": "dist/index.min.js",
   "types": "typings/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "typings"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c --watch",
