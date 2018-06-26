@@ -5,7 +5,10 @@
     "packages/func-res-persist",
     "packages/eslint-config-fatc"
   ],
-  "version": "0.0.20",
+  "version": "0.0.21",
   "npmClient": "npm",
-  "npmClientArgs": ["--production", "--no-optional"]
+  "npmClientArgs": [
+    "--production",
+    "--no-optional"
+  ]
 }
