@@ -3,12 +3,9 @@
   "packages": [
     "packages/promisify-indexeddb",
     "packages/func-res-persist",
-    "packages/eslint-custom"
+    "packages/eslint-config-fatc"
   ],
   "version": "0.0.20",
   "npmClient": "npm",
-  "npmClientArgs": [
-    "--production",
-    "--no-optional"
-  ]
+  "npmClientArgs": ["--production", "--no-optional"]
 }
