@@ -1,12 +1,11 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "packages/promisifyIndexedDB"
+    "packages/promisify-indexeddb",
+    "packages/func-res-persist",
+    "packages/eslint-custom"
   ],
   "version": "0.0.19",
   "npmClient": "npm",
-  "npmClientArgs": [
-    "--production",
-    "--no-optional"
-  ]
+  "npmClientArgs": ["--production", "--no-optional"]
 }

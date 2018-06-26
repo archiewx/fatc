@@ -1,0 +1,35 @@
+{
+  "name": "eslint-config-airbnb-base-extend",
+  "version": "1.3.0",
+  "description": "base on airbnb config",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm link && echo '在项目中使用npm link eslint-config-airbnb-extend测试'",
+    "prepush": "git add .",
+    "push": "git commit -m",
+    "postpush": "git push",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish"
+  },
+  "keywords": [
+    "eslint",
+    "airbnb"
+  ],
+  "peerDepentdencies": {},
+  "repository": "https://github.com/zsirfs/eslint-config-airbnb-extend.git",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-vue": "^4.5.0"
+  },
+  "devDependencies": {}
+}
