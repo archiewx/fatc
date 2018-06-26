@@ -1,6 +1,6 @@
 {
   "name": "@fatc/promisifyindexeddb",
-  "version": "0.0.21",
+  "version": "0.0.25",
   "description": "promisify indexedDB",
   "main": "index.js",
   "types": "typings/index.d.ts",
