@@ -5,7 +5,10 @@
     "packages/func-res-persist",
     "packages/eslint-custom"
   ],
-  "version": "0.0.19",
+  "version": "0.0.20",
   "npmClient": "npm",
-  "npmClientArgs": ["--production", "--no-optional"]
+  "npmClientArgs": [
+    "--production",
+    "--no-optional"
+  ]
 }
