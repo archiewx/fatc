@@ -1,5 +1,6 @@
 {
   "name": "@fatc/promisifyindexeddb",
+  "private": false,
   "version": "0.0.19",
   "description": "promisify indexedDB",
   "main": "index.js",
@@ -20,8 +21,5 @@
     "build": "rollup -c"
   },
   "author": "",
-  "license": "ISC",
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "ISC"
 }
