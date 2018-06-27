@@ -1,6 +1,6 @@
 {
   "name": "@fatc/promisifyindexeddb",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "promisify indexedDB",
   "main": "index.js",
   "types": "typings/index.d.ts",
@@ -23,6 +23,5 @@
   "license": "ISC",
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }
