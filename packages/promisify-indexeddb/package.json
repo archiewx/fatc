@@ -17,15 +17,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c --watch",
-    "build": "rollup -c",
-    "postinstall": "npm-insights:log"
+    "build": "rollup -c"
   },
   "author": "",
   "license": "ISC",
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "npm-insights": "^1.0.8"
-  }
+  "dependencies": {}
 }
