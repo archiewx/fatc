@@ -10,7 +10,8 @@
     "postpush": "git push",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "publish:major": "npm version major && npm publish"
+    "publish:major": "npm version major && npm publish",
+    "postinstall": "npm-insights:log"
   },
   "keywords": [
     "eslint",
@@ -30,7 +31,8 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-vue": "^4.5.0"
+    "eslint-plugin-vue": "^4.5.0",
+    "npm-insights": "^1.0.8"
   },
   "publishConfig": {
     "access": "public"
