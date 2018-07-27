@@ -26,7 +26,7 @@ module.exports = {
     'no-param-reassign': ['off'],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-console': [0],
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'consistent-return': [0],
     'arrow-parens': [0],
     'no-underscore-dangle': [0],
@@ -38,5 +38,12 @@ module.exports = {
     indent: [0],
     'no-nested-ternary': [0],
     'no-plusplus': [0]
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.json', '.json', '.ts', '.tsx']
+      }
+    }
   }
 }
