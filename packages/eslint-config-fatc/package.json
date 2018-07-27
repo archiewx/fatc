@@ -1,6 +1,6 @@
 {
   "name": "@fatc/eslint-config-fatc",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "base on airbnb config",
   "main": "index.js",
   "scripts": {
@@ -35,6 +35,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }
