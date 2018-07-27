@@ -8,5 +8,10 @@
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-typescript2": "^0.15.0",
     "rollup-plugin-uglify": "^4.0.0"
+  },
+  "scripts": {
+    "prepush": "git add .",
+    "push": "git commit -m",
+    "postpush": "git push"
   }
 }
