@@ -26,6 +26,17 @@ module.exports = {
     'no-param-reassign': ['off'],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-console': [0]
+    'no-console': [0],
+    'consistent-return': [0],
+    'arrow-parens': [0],
+    'no-underscore-dangle': [0],
+    'prefer-destructuring': [0],
+    'arrow-body-style': [0],
+    'function-paren-newline': [0],
+    'no-unused-expressions': [0],
+    'prefer-template': [0],
+    indent: [0],
+    'no-nested-ternary': [0],
+    'no-plusplus': [0]
   }
 }

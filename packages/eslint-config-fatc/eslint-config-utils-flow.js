@@ -1,5 +1,7 @@
 // https://eslint.org/docs/user-guide/configuring
 
+console.warn('🚫🚫🚫已移除eslint-plugin-flowtype, 如果需要请自己安装')
+
 module.exports = {
   root: true,
   parser: 'babel-eslint',
